@@ -5,24 +5,24 @@
         <div class="card-header">
           <div class="container-fluid">
             <div class="row">
-              <div class="col-1">
+              <div class="col-6">
                 <button
                   type="button"
-                  class="btn btn-info pl-2"
+                  class="btn btn-info"
                   (click)="routToHome()"
                 >
                   <i class="bi bi-plus-circle"></i>
                   Home
                 </button>
               </div>
-              <div class="col-3">
+              <div class="col-6">
                 <button
                   type="button"
                   class="btn btn-warning"
                   (click)="createNewActivity()"
                 >
                   <i class="bi bi-plus-circle"></i>
-                  New Activity
+                  Nueva actividad
                 </button>
               </div>
             </div>
@@ -30,7 +30,7 @@
         </div>
         <table class="table" border="1">
           <thead>
-            <th>Activities</th>
+            <th>Actividades</th>
           </thead>
           <tbody>
             <tr *ngFor="let m of activities">

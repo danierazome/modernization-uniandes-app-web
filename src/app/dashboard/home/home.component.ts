@@ -12,4 +12,8 @@ export class HomeComponent {
   routToActivities(): void {
     this.routerPath.navigate(["/activities"]);
   }
+
+  routToTravelers(): void {
+    this.routerPath.navigate(["/travelers"]);
+  }
 }
