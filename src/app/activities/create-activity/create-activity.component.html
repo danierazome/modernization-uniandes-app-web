@@ -1,0 +1,53 @@
+<h3>New activity</h3>
+
+<form [formGroup]="activityForm" (ngSubmit)="createActivity()">
+  <div class="row">
+    <div class="col col-6">
+      <!--Nombre-->
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="name">Name</label>
+        <input
+          novalidate
+          id="name"
+          class="form-control"
+          formControlName="name"
+          placeholder="Name"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            activityForm.get('name')!.hasError('required') &&
+            activityForm.get('name')!.touched
+          "
+        >
+          Required field
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="activityForm.get('name')!.hasError('minlength')"
+        >
+          Minimum length: 5 characters
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row pt-2 pb-2">
+      <div class="col-2">
+        <button type="button" class="btn btn-primary mt-2 pl-2" type="submit">
+          Create
+        </button>
+      </div>
+      <div class="col-2">
+        <button
+          type="button"
+          class="btn btn-danger mt-2 pl-2"
+          (click)="cancelForm()"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
