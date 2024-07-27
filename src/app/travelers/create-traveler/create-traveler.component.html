@@ -1,1 +1,80 @@
-<p>create-traveler works!</p>
+<h3>Nuevo Viajero</h3>
+
+<form [formGroup]="travelerForm" (ngSubmit)="createTraveler()">
+  <div class="row">
+    <div class="col col-6">
+      <!--First Name-->
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="firstname">Nombres</label>
+        <input
+          novalidate
+          id="firstname"
+          class="form-control"
+          formControlName="firstname"
+          placeholder="Nombres"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            travelerForm.get('firstname')!.hasError('required') &&
+            travelerForm.get('firstname')!.touched
+          "
+        >
+          Campo requerido
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="travelerForm.get('firstname')!.hasError('minlength')"
+        >
+          Minimo 3 caracteres
+        </div>
+      </div>
+
+      <!--Last Name-->
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="lastname">Apellidos</label>
+        <input
+          novalidate
+          id="lastname"
+          class="form-control"
+          formControlName="lastname"
+          placeholder="Apellidos"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            travelerForm.get('lastname')!.hasError('required') &&
+            travelerForm.get('lastname')!.touched
+          "
+        >
+          Campo requerido
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="travelerForm.get('lastname')!.hasError('minlength')"
+        >
+          Minimo 3 caracteres
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row pt-2 pb-2">
+      <div class="col-6">
+        <button type="button" class="btn btn-primary mt-2 pl-2" type="submit">
+          Create
+        </button>
+      </div>
+      <div class="col-6">
+        <button
+          type="button"
+          class="btn btn-danger mt-2 pl-2"
+          (click)="cancelForm()"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

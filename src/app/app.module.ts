@@ -7,6 +7,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { DashboardModule } from "./dashboard/dashboard.module";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { ActivitiesModule } from "./activities/activities.module";
+import { TravelersModule } from "./travelers/travelers.module";
 import { ToastrModule } from "ngx-toastr";
 
 @NgModule({
@@ -18,6 +19,7 @@ import { ToastrModule } from "ngx-toastr";
     DashboardModule,
     NgbModule,
     ActivitiesModule,
+    TravelersModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 7000,
